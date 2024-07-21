@@ -15,7 +15,9 @@ class CardItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailedScreen(),
+            builder: (context) => DetailedScreen(
+              movie: movie,
+            ),
           ),
         );
       },
@@ -24,7 +26,7 @@ class CardItem extends StatelessWidget {
           children: [
             Positioned.fill(
               child: Image.network(
-                'https://image.tmdb.org/t/p/w500' + movie.posterPath,
+                'https://image.tmdb.org/t/p/w500${movie.posterPath}',
                 fit: BoxFit.fill,
               ),
             ),
